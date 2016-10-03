@@ -1,0 +1,16 @@
+Uso: ./setport (-p | --port) NUMERO_PUERTO
+    ej .: ./setport -p 8080
+
+* Nota: si ha instalado SETPORT usando el guión previsto, no es necesario escribir "./" antes de escribir "setport".
+Argumentos necesarios son los mismos para ambas opciones prolijas y cortas.
+-p,     --port NUMERO_PUERTO    Especifica el puerto que debe utilizar portsetter. NUMERO_PUERTO debe estar entre 1 y 65535
+-e [puerto]                     Especifica una variable ambiental para leer el valor del puerto de. Si no se especifica ninguna variable,
+                                PORT se asume. Debe ser utilizado después de la opción -p o --port.
+-h, -?, --help                  Muestra esta pantalla de uso. Esto no se puede utilizar con cualquier otra opción.
+-!,     --about                 Muestra información básica sobre el programa.
+-v,     --version               Muestra información sobre la versión.
+
+Códigos de retorno:
+0: El éxito, la salida normal
+1: Puerto no válido
+2: Argumento no válido o demasiados argumentos
