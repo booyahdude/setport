@@ -3,13 +3,13 @@
 To install setport onto your system so that you can run it without going to its directory,
 and without typing "./" before it each time, please do the following:
 
-1. Edit the install.sh script, replacing "~/workspace/portsetter/setport" with the path to the setport executable on your system.
+1. Edit the install.sh script, replacing _"~/workspace/portsetter/setport"_ with the path to the setport executable on your system.
  ex. "/bin/setport"
-2. Execute the install.sh script by typing "./install.sh" at a terminal window.
+2. Execute the install.sh script by typing _"./install.sh"_ at a terminal window.
 
 --OR--
 
-1. Run the following command in a terminal: "sudo ln -s <path to setport>/setport /usr/local/bin/" where <path to setport> is the local path to the executable on your system.
+1. Run the following command in a terminal: _"sudo ln -s <path to setport>/setport /usr/local/bin/"_ where <path to setport> is the local path to the executable on your system.
 
 _*Note that you will need sudo priviledges to do this._
 
