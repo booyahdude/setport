@@ -4,12 +4,12 @@ To install setport onto your system so that you can run it without going to its 
 and without typing "./" before it each time, please do the following:
 
 1. Edit the install.sh script, replacing _"~/workspace/portsetter/setport"_ with the path to the setport executable on your system.
- ex. "/bin/setport"
+ ex. _"/bin/setport"_
 2. Execute the install.sh script by typing _"./install.sh"_ at a terminal window.
 
 --OR--
 
-1. Run the following command in a terminal: _"sudo ln -s <path to setport>/setport /usr/local/bin/"_ where <path to setport> is the local path to the executable on your system.
+1. Run the following command in a terminal: _"sudo ln -s \<path to setport\>/setport /usr/local/bin/"_ where \<path to setport\> is the local path to the executable on your system.
 
 _*Note that you will need sudo priviledges to do this._
 
@@ -27,10 +27,9 @@ cases and output the results to standard out.
 
 #### **PREREQUISITES:**
 You must have errArg.txt, errPort.txt, success.txt, success2.txt, successES.txt, successPL.txt, about.txt,
-version.txt and usage.txt in the same directory as the executable. You must also have the following environmental variables*
-defined on your system: PORT = 8080, METEOR_PORT = 8080, and SHELL= /bin/bash. You must also ensure that you do not have
-the variable NOT_A_VAR on your system.
+version.txt and usage.txt in the same directory as the executable. You must also have the following environmental variables\*
+defined on your system: PORT = 8080, METEOR_PORT = 8080, SHELL= /bin/bash, LANGUAGE = C.UTF-8, and LC_ALL = C. You must also ensure that you do not have the variable NOT_A_VAR on your system.
 * You can view your system's environmental variables by typing "env" at a terminal window. To create a variable or set its
-value, simply type "export MY_VARIABLE="value"" where MY_VARIABLE is your variable name and value is its value.
+value, simply type _"export **MY_VARIABLE**="**value**""_ where **MY_VARIABLE** is your variable name and **value** is its value.
 
 **RETURN CODES**: **0** for complete success, **1** if there were errors.
