@@ -1,0 +1,18 @@
+ERROR: Invalid arguments.
+
+Usage: ./setport (-p | --port) PORT_NUMBER
+    ex.: ./setport -p 8080
+
+*Note: if you have installed setport using the provided script, you do not need to type "./" before typing setport.
+Required arguments are the same for both verbose and short options.
+-p,     --port PORT_NUMBER  Specifies which port that portsetter should use. PORT_NUMBER should be between 1 and 65535
+-e [PORT]                   Specifies an environmental variable to read the port value from. If no variable is specified,
+                            PORT is assumed.  Must be used after the -p or --port option.
+-h, -?, --help              Print this usage screen. This may not be used with any other option.
+-!,     --about             Print basic information about the program.
+-v,     --version           Print version information.
+
+RETURN CODES:
+0: Success, normal exit
+1: Invalid port specified
+2: Invalid argument or too many arguments
