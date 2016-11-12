@@ -94,6 +94,10 @@ int main() {
     outputResult(indivTest, "-p -e");
     allTests &= indivTest;
     
+    indivTest = runTest("-p --environment", 0, "success2.txt");
+    outputResult(indivTest, "-p --environment");
+    allTests &= indivTest;
+    
     indivTest = runTest("-p -e METEOR_PORT", 0, "success2.txt");
     outputResult(indivTest, "-p -e METEOR_PORT");
     allTests &= indivTest;
@@ -102,9 +106,32 @@ int main() {
     outputResult(indivTest, "--port -e");
     allTests &= indivTest;
     
+        indivTest = runTest("--port --environment", 0, "success2.txt");
+    outputResult(indivTest, "--port --environment");
+    allTests &= indivTest;
+    
     indivTest = runTest("--port -e METEOR_PORT", 0, "success2.txt");
     outputResult(indivTest, "--port -e METEOR_PORT");
     allTests &= indivTest;
+    
+    indivTest = runTest("--port -e BAR", 0, "success3.txt");
+    outputResult(indivTest, "--port -e BAR");
+    allTests &= indivTest;
+    
+     indivTest = runTest("--port --environment BAR", 0, "success3.txt");
+    outputResult(indivTest, "--port --environment BAR");
+    allTests &= indivTest;
+    
+     indivTest = runTest("-p -e BAR", 0, "success3.txt");
+    outputResult(indivTest, "-p -e BAR");
+    allTests &= indivTest;
+    
+     indivTest = runTest("-p --environment BAR", 0, "success3.txt");
+    outputResult(indivTest, "--port -e BAR");
+    allTests &= indivTest;
+    
+    
+ 
     
     // negative tests
     cout << "----- Negative tests -----" << endl;
@@ -170,6 +197,10 @@ int main() {
     
     indivTest = runTest("-p -e NOT_A_VAR", 1, "errPort.txt");
     outputResult(indivTest, "-p -e NOT_A_VAR");
+    allTests &= indivTest;
+    
+    indivTest = runTest("-p --environment NOT_A_VAR", 1, "errPort.txt");
+    outputResult(indivTest, "-p --environment NOT_A_VAR");
     allTests &= indivTest;
     
     indivTest = runTest("--port -e PORT -h", 2, "errArg.txt");
