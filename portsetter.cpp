@@ -64,6 +64,7 @@ bool fileExists(const string&);
 // Purpose: The entry point to the C++ program.
 // Parameters: The number of arguments entered on the command-line, and the arguments themsevles delimited by spaces.
 int main(int argc, char* argv[]) {
+   // cout << "v0.2" << endl;
     // set language
     //cout << getLang() << endl;
     setGlobals(getLang());
@@ -112,14 +113,16 @@ int main(int argc, char* argv[]) {
     strArg = argv[2];
     string strPort = "";
     
-    if (strArg == "-e") { // we have an environmental variable, branch on whether the user specified a name
+    if (strArg == "-e" || strArg == "--environment") { // we have an environmental variable, branch on whether the user specified a name
         if (argc > 4) { // too many args, quit
             cout << ERROR_ARGS << endl << endl;
             cout << usage;
             return ERROR_ARGS_CODE;
         }
         
-        if (argc == 3) strPort = readEnv("PORT"); // we need to extract the value for port from var PORT
+        if (argc == 3) {
+            strPort = readEnv("PORT"); // we need to extract the value for port from var PORT
+        }
         else { // we need to extract the value from user-specified var
             strArg = argv[3];
             strPort = readEnv(strArg);
@@ -134,7 +137,7 @@ int main(int argc, char* argv[]) {
 
     // check to see if we need to read in a port still
     strArg = argv[2];
-    if (strArg != "-e") { // we didn't have an environmental variable, we need to read in a value for the port
+    if (strArg != "-e" && strArg != "--environment") { // we didn't have an environmental variable, we need to read in a value for the port
         // we need to make sure there aren't any extra arguments first
         if (argc > 3) { // invalid args
             cout << ERROR_ARGS << endl << endl;
