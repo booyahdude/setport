@@ -34,3 +34,5 @@ the variable NOT_A_VAR on your system.
 value, simply type "export MY_VARIABLE="value"" where MY_VARIABLE is your variable name and value is its value.
 
 RETURN CODES: 0 for complete success, 1 if there were errors.
+
+Added new flags to access environment variables and test cases
